@@ -1,0 +1,50 @@
+# NOTE: changing this file will not update your GitHub App settings.
+# You must visit github.com/settings/apps/your-app-name to edit them.
+#
+# Read more about configuring your GitHub App:
+# https://probot.github.io/docs/development/#configuring-a-github-app
+#
+# Read more about GitHub App Manifests:
+# - https://docs.github.com/en/enterprise-cloud@latest/developers/apps/building-github-apps/creating-a-github-app-from-a-manifest
+# - https://docs.github.com/en/enterprise-cloud@latest/developers/apps/building-github-apps/creating-a-github-app-using-url-parameters
+
+# The list of events the GitHub App subscribes to.
+# See "Webhook events and payloads"
+# ~ https://docs.github.com/en/enterprise-cloud@latest/developers/webhooks-and-events/webhooks/webhook-events-and-payloads
+default_events:
+  - code_scanning_alert
+  - issues
+  - push
+  - pull_request
+  - pull_request_review
+  - repository
+  - repository_vulnerability_alert
+  - secret_scanning_alert
+
+# The set of permissions needed by the GitHub App. The format of the object uses
+# the permission name for the key (for example, issues) and the access type for
+# the value (for example, write).
+# Valid values are `read`, `write`, and `none`
+default_permissions:
+  administration: read
+  contents: read
+  issues: write
+  metadata: read
+  pull_requests: read
+  secret_scanning_alerts: read
+  security_events: read
+  vulnerability_alerts: read
+
+# The name of the GitHub App. Defaults to the name specified in package.json
+name: GitHub Events Relay
+
+# The homepage of your GitHub App.
+url: https://github-events-relay.azurewebsites.net
+
+# A description of the GitHub App.
+description: >-
+  Collect GitHub events and securely relay them to GitHub Actions or a backing
+  service
+
+# Set to true when your GitHub App is available to the public or false when it is only accessible to the owner of the app.
+public: false
