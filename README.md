@@ -54,8 +54,6 @@ Follow these steps to deploy `api/GitHubEventsRelayFunction` function on Azure:
 
 ### 3. GitHub App installation
 
-## 3
-
 ```sh
 # Install dependencies
 npm install
